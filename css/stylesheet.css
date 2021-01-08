@@ -218,6 +218,8 @@ h6 {
 
 .card-img-top {
   place-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .form-label {
@@ -238,4 +240,8 @@ h6 {
   font-weight: bold;
   display: inline;
   /* margin-left: 31%; */
+}
+
+.stats {
+  margin-top: 30px;
 }
