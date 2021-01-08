@@ -217,8 +217,7 @@ h6 {
 }
 
 .card-img-top {
-  margin-left: 30px;
-  margin-right: 30px;
+  place-content: center;
 }
 
 .form-label {

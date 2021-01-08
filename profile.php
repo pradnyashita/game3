@@ -127,7 +127,7 @@ $conn->query($sql);
     
     ?>
   <div>  
-  <img src="images/<?= $image;?>" class="card-img-top" alt="Foto <?=$_SESSION['Name']?>" style="width:300px">
+  <img src="images/<?= $image;?>" class="card-img-top" alt="Foto <?=$_SESSION['Name']?>">
   </div>
 
   <div class="stats">
