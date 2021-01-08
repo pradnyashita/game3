@@ -85,23 +85,32 @@ function recievemove(){
 			   z = this.responseText;
 			   if(z == "pl1"){
 				   document.getElementById("plwin").innerHTML="<?php if($pltype == 'rec' ){ 
-				   echo 'You ';}
-				   else {
-					   echo $pl1name;} ?> Won!";
-					$("#myModal").css("display","block");
-			   }
-			   else if(z== "pl2"){
-				   document.getElementById("plwin").innerHTML="<?php if($pltype == 'rec' ){ 
-				   echo $pl2name;}
-				   else {
-					   echo 'You ';} ?> Won!";
-					$("#myModal").css("display","block");
-			   }
-			   else if(z == "draw"){
-				   document.getElementById("plwin").innerHTML="Draw !";
-					$("#myModal").css("display","block");
-			   }
-			   else {
+				   echo 'You ';
+				   $sql = "INSERT INTO ".$dbname.".menang(Id, menang) VALUES ('".$pl1id."',1)";
+				   $conn->query($sql);
+				   $sql = "INSERT INTO ".$dbname.".kalah(Id, kalah) VALUES ('".$pl2id."',1)";
+				   $conn->query($sql);
+				} else {
+					echo $pl1name;
+				// 	$sql = "INSERT INTO ".$dbname.".menang(Id, menang) VALUES ('".$pl1id."',1)";
+				//    $conn->query($sql);
+				} 
+				?> Won!";
+				$("#myModal").css("display","block");
+			}
+			else if(z== "pl2"){
+				document.getElementById("plwin").innerHTML="<?php if($pltype == 'rec' ){ 
+					echo $pl2name;
+				} else {
+					echo 'You ';
+				} ?> Won!";
+				$("#myModal").css("display","block");
+			}
+			else if(z == "draw"){
+				document.getElementById("plwin").innerHTML="Draw !";
+				$("#myModal").css("display","block");
+			}
+			else {
 			   if(checkedboxes[z-1] == 0){ 
 			   if(plrtype == 'rec'){
 			  $(".div"+z).css("background-image", "url(images/cross1.png)");
